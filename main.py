@@ -1,27 +1,30 @@
 import pandas as pd
 
-a = pd.DataFrame([[23,"남","서울특별시"],
-                  [53,"여","제주특별자치도"]],
-                  index = ["A00301","D00809"],
-                  columns = ["연령","성별","거주지"])
+data = {"성명" : ["이겨례", "조약돌"],
+       "나이" : [25, 19], "성별" : ["남", "여"],
+       "키" : [185, 163], "체중" : [89, 53]}
 
-print(a)
+df = pd.DataFrame(data)
+
+print(df)
 print("\n")
 
-a.rename(index={"A00301":"환자1","D00809":"환자2"}, inplace=True)
-
-a.rename(columns={"연령":"AGE","성별":"GENDER","거주지":"ADDRESS"}, inplace=True)
-
-print(a)
+df["BMI"] = 0
+print(df)
 print("\n")
 
-search_1 = a.loc["환자1"]
-search_2 = a.iloc[1]
+df.loc[2] = 0
 
-print(search_1)
+print(df)
 print("\n")
-print(search_2)
 
-a["BMI"] = 0
+df.loc[3] = ["강산애",27,"남",177,63,0]
+
+print(df)
 print("\n")
-print(a)
+
+# df.loc[x] // x 데이터를 추가 행에 넣음
+df.loc["추가"] = df.loc[3]
+
+print(df)
+print("\n")
