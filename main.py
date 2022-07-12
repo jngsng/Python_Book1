@@ -22,3 +22,6 @@ print(search_1)
 print("\n")
 print(search_2)
 
+a["BMI"] = 0
+print("\n")
+print(a)
