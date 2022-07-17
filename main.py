@@ -26,5 +26,6 @@ print("\n")
 # df.loc[x] // x 데이터를 추가 행에 넣음
 df.loc["추가"] = df.loc[3]
 
+
 print(df)
 print("\n")
